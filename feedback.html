@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback form</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <!-- Header section with logo image -->
+    <header>
+        <img src="websitelogo.png" alt="Website Logo">
+        <h1>Good health and well being</h1>
+    </header>
+   
+    <!-- Navigation bar -->
+    <nav>
+        <ul>
+            <li><a href="https://w1926950.users.ecs.westminster.ac.uk/tarek/home.html">| Home |</a></li>
+            <li><a href="https://w1971361.users.ecs.westminster.ac.uk/tarek/gallery.html">| Gallery |</a></li>
+            <li><a href="https://w1969647.users.ecs.westminster.ac.uk/tarek/shop.html">| Shop |</a></li>
+            <li><a href="https://w2046331.users.ecs.westminster.ac.uk/tarek/profile.html">| User profile |</a></li>
+            <li><a href="https://w1926950.users.ecs.westminster.ac.uk/tarek/feedback.html">| Feedback |</a></li>
+            <li><a href="https://w1971361.users.ecs.westminster.ac.uk/tarek/sitemap.html">| Sitemap |</a></li>
+            <li><a href="https://w2046331.users.ecs.westminster.ac.uk/tarek/team.html">| Team |</a></li>
+        </ul>
+    </nav>
+    <main> 
+        <!--form action mail-->
+        <form action="mailto:Hamdan.khan0904@gmail.com" method="post" enctype="text/plain" id="feedbackForm" onsubmit="submitForm(event)">
+            <div class="form">
+                <h1>Feedback Form</h1>
+                <h2>Required fields *</h2>
+            </div>
+            <!--Form to collect user information with different types of inputs-->
+            <div class="name">
+                *Enter your name:
+                <input type="text" name="name" id="name" placeholder="Enter name here" required><br> <!--required-->
+            </div>
+            <br>
+            <div class="email">
+                <label for="email">*Enter your email:</label>
+                <input type="email" class="email" id="email" placeholder="Enter email here" required><br>
+            </div>
+            <br>
+            <div class="sitevisit">
+                Was this your first time visiting?<br>
+                <input type="radio" name="sitevisit" id="sitevisit1" value="yes">
+                <label for="sitevisit1">Yes</label>
+                <input type="radio" name="sitevisit" id="sitevisit2" value="no">
+                <label for="sitevisit2">No</label><br><br>
+            </div>
+    
+            <div class="navigate">
+                Was this website informative and easy to navigate through?<br>
+                <input type="radio" name="navigate" id="navigate1" value="yes">
+                <label for="navigate1">Yes</label>
+                <input type="radio" name="navigate" id="navigate2" value="no">
+                <label for="navigate2">No</label><br><br>
+            </div>
+            <div class="feedback">
+                <label for="feedback">*Suggest any improvements for the future:</label><br><br>
+                <textarea name="feedback" id="feedback" placeholder="Add your message here" required></textarea><br><br>
+            </div>
+    
+                
+            <div class="satisfaction">
+                    <label style="margin-right: 10px;">How satisfied are you with Our services? Choose from 0 to 10, with 1 being "Not satisfied at all!" and 10 being "Extremely satisfied!"</label><br>
+                    <input type="radio" id="radio1" name="satisfaction" value="1">
+                    <label for="radio1">1</label>
+                    <input type="radio" id="radio2" name="satisfaction" value="2">
+                    <label for="radio2">2</label>
+                    <input type="radio" id="radio3" name="satisfaction" value="3">
+                    <label for="radio3">3</label>
+                    <input type="radio" id="radio4" name="satisfaction" value="4">
+                    <label for="radio4">4</label>
+                    <input type="radio" id="radio5" name="satisfaction" value="5">
+                    <label for="radio5">5</label>
+                    <input type="radio" id="radio6" name="satisfaction" value="6">
+                    <label for="radio6">6</label>
+                    <input type="radio" id="radio7" name="satisfaction" value="7">
+                    <label for="radio7">7</label>
+                    <input type="radio" id="radio8" name="satisfaction" value="8">
+                    <label for="radio8">8</label>
+                    <input type="radio" id="radio9" name="satisfaction" value="9">
+                    <label for="radio9">9</label>
+                    <input type="radio" id="radio10" name="satisfaction" value="10">
+                    <label for="radio10">10</label><br><br>
+                </div>
+    
+                <div class="recommend">
+                Would you recommend our services?<br>
+                <input type="radio" name="recommend" id="recommend1" value="yes">
+                <label for="recommend1">Yes</label>
+                <input type="radio" name="recommend" id="recommend2" value="no">
+                <label for="recommend2">No</label><br><br>
+                </div>
+    
+                <div class="update">
+                <label for="updates">*Would you like to recieve updates about the website and any offers?</label><br>
+                <select name="updates" id="updates" required>
+                    <option value="">Yes-via email</option>
+                    <option value="yes-txt">Yes-via text message</option>
+                    <option value="No"> No</option>
+                </select>
+                 </div>
+    <br><br>
+    <div class="requests">
+                <label for="requests">Do you have any additional questions or requests</label><br>
+                <textarea name="requests" id="requests"
+                rows="5" cols="30" placeholder="Add your message here"></textarea><br><br>
+            </div>
+    
+            <!-- Preview Button -->
+            <button type="button" onclick="previewForm()" style="height:50px; width:250px; background-color: lightgreen;">Preview</button>
+            <button type="submit" name="button" style="height:50px; width:250px; background-color: lightgreen;">Submit</button><br><br>
+
+            <!-- Hidden confirmation message -->
+            <div id="confirmation" style="display: none;">
+                Thank you for your feedback!
+            </div>
+        </form>
+    </main>
+    <footer>
+        <a href="https://w1926950.users.ecs.westminster.ac.uk/tarek/pageEditor_ST2.html" Target="_blank">Page Editor</a>
+    </footer>
+    <script>
+        function previewForm() {
+            // Retrieve form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const siteVisit = document.querySelector('input[name="sitevisit"]:checked') ? document.querySelector('input[name="sitevisit"]:checked').value : null;
+            const navigate = document.querySelector('input[name="navigate"]:checked') ? document.querySelector('input[name="navigate"]:checked').value : null;
+            const feedback = document.getElementById('feedback').value;
+            const satisfaction = document.querySelector('input[name="satisfaction"]:checked') ? document.querySelector('input[name="satisfaction"]:checked').value : null;
+            const recommend = document.querySelector('input[name="recommend"]:checked') ? document.querySelector('input[name="recommend"]:checked').value : null;
+            const updates = document.getElementById('updates').value;
+            const requests = document.getElementById('requests').value;
+    
+            // Construct preview content
+            const previewContent = `
+                <html>
+                <head>
+                    <title>Form Preview</title>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                        }
+                        h1 {
+                            color: #333;
+                        }
+                        p {
+                            margin-bottom: 10px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <h1>Feedback Form Preview</h1>
+                    <p><strong>Name:</strong> ${name}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                    <p><strong>First Time Visit:</strong> ${siteVisit}</p>
+                    <p><strong>Navigate:</strong> ${navigate}</p>
+                    <p><strong>Feedback:</strong> ${feedback}</p>
+                    <p><strong>Satisfaction:</strong> ${satisfaction}</p>
+                    <p><strong>Recommend:</strong> ${recommend}</p>
+                    <p><strong>Updates:</strong> ${updates}</p>
+                    <p><strong>Requests:</strong> ${requests}</p>
+                </body>
+                </html>
+            `;
+    
+            // Open a new window with the preview content
+            const previewWindow = window.open('', '_blank');
+            previewWindow.document.open();
+            previewWindow.document.write(previewContent);
+            previewWindow.document.close();
+        }
+    
+        function submitForm(event) {
+            document.getElementById('confirmation').style.display = 'block';
+        }
+    </script>
+    
+    
+    
+
+</body>
+</html>
